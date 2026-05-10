@@ -18,18 +18,22 @@ function SingleItem() {
     fetchItem();
   }, [id]);
 
-  if (!item) return <p style={{ padding: '20px' }}>Loading...</p>;
+  if (!item) return <p className="container">Loading...</p>;
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>{item.title}</h2>
-      <p>{item.description}</p>
-      <Link to={`/edit/${item.id}`}>
-        <button style={{ margin: '5px' }}>Edit</button>
-      </Link>
-      <Link to="/items">
-        <button style={{ margin: '5px' }}>Back to All Items</button>
-      </Link>
+    <div className="container">
+      <div className="form-box">
+        <h2>{item.title}</h2>
+        <p style={{ marginBottom: '20px', color: '#777' }}>{item.description}</p>
+        <div className="home-buttons">
+          <Link to={`/edit/${item.id}`}>
+            <button className="btn-secondary">Edit</button>
+          </Link>
+          <Link to="/items">
+            <button className="btn-primary">Back to All Items</button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

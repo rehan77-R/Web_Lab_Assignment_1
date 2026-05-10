@@ -25,27 +25,31 @@ function AllItems() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="container">
       <h2>All Items</h2>
       {items.length === 0 ? (
         <p>No items found!</p>
       ) : (
         items.map((item) => (
-          <div key={item.id} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            <Link to={`/items/${item.id}`}>
-              <button style={{ margin: '5px' }}>View</button>
-            </Link>
-            <Link to={`/edit/${item.id}`}>
-              <button style={{ margin: '5px' }}>Edit</button>
-            </Link>
-            <button
-              onClick={() => handleDelete(item.id)}
-              style={{ margin: '5px', background: 'red', color: 'white' }}
-            >
-              Delete
-            </button>
+          <div key={item.id} className="card">
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+            <div className="card-buttons">
+              <Link to={`/items/${item.id}`}>
+                <button className="btn-primary">View</button>
+              </Link>
+              <Link to={`/edit/${item.id}`}>
+                <button className="btn-secondary">Edit</button>
+              </Link>
+              <button
+                onClick={() => handleDelete(item.id)}
+                className="btn-danger"
+              >
+                Delete
+              </button>
+            </div>
           </div>
         ))
       )}

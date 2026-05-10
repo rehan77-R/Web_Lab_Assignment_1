@@ -36,30 +36,30 @@ function EditItem() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="container">
       <h2>Edit Item</h2>
-      <form onSubmit={handleUpdate}>
-        <div>
+      <div className="form-box">
+        <form onSubmit={handleUpdate}>
           <input
             type="text"
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            style={{ display: 'block', margin: '10px 0', padding: '8px', width: '300px' }}
           />
-        </div>
-        <div>
           <textarea
             placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
-            style={{ display: 'block', margin: '10px 0', padding: '8px', width: '300px' }}
+            rows="4"
           />
-        </div>
-        <button type="submit" style={{ padding: '10px 20px' }}>Update Item</button>
-      </form>
+          <div className="home-buttons">
+            <button type="submit" className="btn-primary">Update Item</button>
+            <button type="button" className="btn-secondary" onClick={() => navigate('/items')}>Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
