@@ -4,7 +4,7 @@
 A Single Page Application built with React and Firebase Firestore.
 
 ## Live Demo
-https://weblabassignment1-arsg397u9-rehan77-rs-projects.vercel.app)
+https://weblabassignment1-arsg397u9-rehan77-rs-projects.vercel.app
 
 ## GitHub Repository
 https://github.com/rehan77-R/Web_Lab_Assignment_1
